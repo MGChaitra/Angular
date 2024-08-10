@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <hr>
+            <p>{{post.stockId}}</p>
+            <p>
+                <input type="text" class="form-control" [(ngModel)]="post.stockName"/>
+
+            </p>
+           
+            <p>
+                <textarea class="form-control" [(ngModel)]="post.stockDescription">
+
+                </textarea>
+            </p>
+            <p>
+                <input type="number" class="form-control" [(ngModel)]="post.unitPrice"/>
+
+            </p>
+            <p>
+                <button class="btn btn-primary" (click)="onSubmit()">Save Changes</button>
+                <button class="btn btn-secondary"  routerLink="/Post/index">Cancel Changes</button>
+            </p>
+        </div>
+    </div>
+</div>

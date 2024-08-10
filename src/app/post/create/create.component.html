@@ -1,0 +1,29 @@
+<p>{{postedData | json}}</p>>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Post Your Srock Info</h2>
+            <hr>
+        <p>
+            Enter the Id: <input [(ngModel)]="postedData.stockId"
+            class="form-control"/>
+        </p>
+        <p>
+            Enter the Name: <input [(ngModel)]="postedData.stockName"
+            class="form-control"/>
+        </p>
+        <p>
+            Enter the Description: <input [(ngModel)]="postedData.stockDescription"
+            class="form-control"/>
+        </p>
+        <p>
+            Enter the Price: <input [(ngModel)]="postedData.unitPrice"
+            class="form-control"/>
+        </p>
+        <p>
+            <button class="btn btn-danger" (click)="onSubmit()">Save Changes</button>
+        </p>
+        </div>
+    </div>
+</div>

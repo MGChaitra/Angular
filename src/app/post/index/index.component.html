@@ -1,0 +1,41 @@
+
+<div class="container">
+    <h1>List of Posts</h1>
+    <div class="row">
+        <a href="#" routerLink="/Post/create" class="btn btn-success">Create New Posts
+            <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="row">
+        <input type="search" [(ngModel)]="place" placeholder="search places"/>
+    </div>
+  <table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Stock Id</td>
+            <td>Stock Name</td>
+            <td>Stock Description</td>
+            <td> Strock Price</td>
+            <td>Options</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let rec of posts | post : place">
+            <td>{{rec.stockId}}</td>
+            <td>{{rec.stockName}}</td>
+            <td>{{rec.stockDescription}}</td>
+            <td>{{rec.unitPrice | currency:'INR'}}</td>
+            <td>
+                <a href="#" class="btn btn-primary" [routerLink]="['/Post/', rec.stockId, 'view']"><i class="fa fa-eye" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="btn btn-secondary" [routerLink]="['/Post/', rec.stockId, 'edit']"><i class="fa fa-pencil" aria-hidden="true"></i>
+                 </a>
+                <a href="#" class="btn btn-danger" (click)="onDelete(rec.stockId)"><i class="fa fa-trash" aria-hidden="true"></i>
+                </a>
+               
+            </td>
+        </tr>
+    </tbody>
+  </table>
+</div>
